@@ -288,9 +288,13 @@ app.use((err, req, res, next) => {
 });
 
 // ─── Start ────────────────────────────────────────────────────
-app.listen(PORT, () => {
-  console.log(`\n🏎️  Mini Garagem CMS rodando em http://localhost:${PORT}`);
-  console.log(`📦  API: http://localhost:${PORT}/api/products`);
-  console.log(`🔐  Admin: http://localhost:${PORT}/admin`);
-  console.log(`\n   Login padrão: admin / admin123\n`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`\n🏎️  Mini Garagem CMS rodando em http://localhost:${PORT}`);
+    console.log(`📦  API: http://localhost:${PORT}/api/products`);
+    console.log(`🔐  Admin: http://localhost:${PORT}/admin`);
+    console.log(`\n   Login padrão: admin / admin123\n`);
+  });
+}
+
+module.exports = app;
