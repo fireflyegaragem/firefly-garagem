@@ -11,7 +11,8 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const JWT_SECRET = process.env.JWT_SECRET || 'mini-garagem-secret-2024';
 const DB_PATH = path.join(__dirname, 'data', 'db.json');
-const UPLOADS_DIR = path.join(__dirname, 'uploads');
+const IS_VERCEL = !!process.env.VERCEL;
+const UPLOADS_DIR = IS_VERCEL ? '/tmp/uploads' : path.join(__dirname, 'uploads');
 
 // ─── Ensure directories exist ────────────────────────────────
 if (!fs.existsSync(UPLOADS_DIR)) fs.mkdirSync(UPLOADS_DIR, { recursive: true });
