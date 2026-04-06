@@ -1601,7 +1601,10 @@ async function executeDelete() {
 
   try {
     const res = await apiFetch(`/admin/products/${pendingDeleteId}`, { method: 'DELETE' });
-    if (!res.ok) throw new Error('Erro ao excluir');
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      throw new Error(data.error || `Erro ao excluir (${res.status})`);
+    }
     showToast('Produto excluído!', 'success');
     closeConfirm();
     loadProducts();
