@@ -10,12 +10,18 @@ const { v4: uuidv4 } = require('uuid');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const JWT_SECRET = process.env.JWT_SECRET || 'mini-garagem-secret-2024';
-const DB_PATH = path.join(__dirname, 'data', 'db.json');
 const IS_VERCEL = !!process.env.VERCEL;
 const UPLOADS_DIR = IS_VERCEL ? '/tmp/uploads' : path.join(__dirname, 'uploads');
+const DB_SOURCE = path.join(__dirname, 'data', 'db.json');
+const DB_PATH = IS_VERCEL ? '/tmp/db.json' : DB_SOURCE;
 
 // ─── Ensure directories exist ────────────────────────────────
 if (!fs.existsSync(UPLOADS_DIR)) fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+
+// ─── Copy db to /tmp on Vercel (first cold start) ────────────
+if (IS_VERCEL && !fs.existsSync(DB_PATH)) {
+  fs.copyFileSync(DB_SOURCE, DB_PATH);
+}
 
 // ─── Middleware ───────────────────────────────────────────────
 app.use(cors());
