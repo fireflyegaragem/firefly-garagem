@@ -1,0 +1,59 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Ferrari F40 — Bburago 1:18",
+      "price": 289.90,
+      "stock": 3,
+      "category": "Ferrari",
+      "scale": "1:18",
+      "brand": "Bburago",
+      "desc": "Edição clássica do lendário Ferrari F40. Detalhes impecáveis, portas e capô abrem.",
+      "img": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=400&q=80",
+      "featured": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "name": "Porsche 911 GT3 RS — Hot Wheels",
+      "price": 54.90,
+      "stock": 12,
+      "category": "Porsche",
+      "scale": "1:64",
+      "brand": "Hot Wheels",
+      "desc": "Hot Wheels premium série RLC. Rodas de borracha real, pintura metálica especial.",
+      "img": "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=400&q=80",
+      "featured": false,
+      "createdAt": "2024-01-02T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "name": "Lamborghini Huracán — Maisto 1:24",
+      "price": 129.90,
+      "stock": 5,
+      "category": "Lamborghini",
+      "scale": "1:24",
+      "brand": "Maisto",
+      "desc": "Huracán Performante em escala 1:24. Acabamento premium com detalhes do cockpit.",
+      "img": "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?w=400&q=80",
+      "featured": true,
+      "createdAt": "2024-01-03T00:00:00.000Z"
+    }
+  ],
+  "settings": {
+    "bannerUrl": "https://res.cloudinary.com/dukzggqkz/image/upload/v1775090371/fc73d3a4-459c-4917-9598-7caa0a4aaeb8_toajxs.png",
+    "logoUrl": "",
+    "storeName": "Mini Garagem Colecionáveis",
+    "whatsappNumber": "5511999999999",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "passwordHash": "$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+      "role": "admin",
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    }
+  ]
+}
