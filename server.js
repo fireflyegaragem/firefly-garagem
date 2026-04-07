@@ -28,9 +28,9 @@ app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static(UPLOADS_DIR));
 // Serve admin panel at /admin
-app.use('/admin', express.static(path.join(__dirname, '..', 'frontend', 'admin')));
+app.use('/admin', express.static(path.join(__dirname, 'frontend', 'admin')));
 // Serve catalog at root
-app.use(express.static(path.join(__dirname, '..', 'frontend')));
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 // ─── Multer (file uploads) ────────────────────────────────────
 const storage = multer.diskStorage({

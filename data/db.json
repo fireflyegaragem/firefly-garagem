@@ -1,59 +1,141 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Ferrari F40 — Bburago 1:18",
-      "price": 289.90,
-      "stock": 3,
-      "category": "Ferrari",
-      "scale": "1:18",
-      "brand": "Bburago",
-      "desc": "Edição clássica do lendário Ferrari F40. Detalhes impecáveis, portas e capô abrem.",
-      "img": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=400&q=80",
-      "featured": true,
-      "createdAt": "2024-01-01T00:00:00.000Z"
-    },
-    {
       "id": "2",
-      "name": "Porsche 911 GT3 RS — Hot Wheels",
-      "price": 54.90,
-      "stock": 12,
-      "category": "Porsche",
-      "scale": "1:64",
-      "brand": "Hot Wheels",
-      "desc": "Hot Wheels premium série RLC. Rodas de borracha real, pintura metálica especial.",
-      "img": "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=400&q=80",
-      "featured": false,
-      "createdAt": "2024-01-02T00:00:00.000Z"
+      "name": "Porsche 911 GT3 RS",
+      "description": "Edição Premium com rodas de metal real e caixa acrílica. Acabamento fosco exclusivo. Numeração limitada.",
+      "price": 89.9,
+      "brand": "Hot Wheels Premium",
+      "model": "Porsche",
+      "scale": "1/64",
+      "stock": 3,
+      "img": "https://res.cloudinary.com/dukzggqkz/image/upload/v1775090372/500-cinza-foi_xqx0zb.png",
+      "badge": "Premium",
+      "stars": 5,
+      "createdAt": "2025-01-01T00:00:00.000Z"
     },
     {
       "id": "3",
-      "name": "Lamborghini Huracán — Maisto 1:24",
-      "price": 129.90,
-      "stock": 5,
-      "category": "Lamborghini",
-      "scale": "1:24",
-      "brand": "Maisto",
-      "desc": "Huracán Performante em escala 1:24. Acabamento premium com detalhes do cockpit.",
-      "img": "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?w=400&q=80",
-      "featured": true,
-      "createdAt": "2024-01-03T00:00:00.000Z"
+      "name": "Ferrari F1-75 #16 Leclerc",
+      "description": "Fórmula 1 Scuderia Ferrari temporada 2022. Piloto Charles Leclerc nº16. Detalhes impressos com alta fidelidade.",
+      "price": 129.9,
+      "brand": "MiniGT",
+      "model": "Formula 1",
+      "scale": "1/64",
+      "stock": 2,
+      "img": "https://res.cloudinary.com/dukzggqkz/image/upload/v1775090373/500-preto-foi_vlxept.png",
+      "badge": "F1",
+      "stars": 5,
+      "createdAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "name": "Red Bull RB18 #1 Verstappen",
+      "description": "Red Bull Racing Oracle — Max Verstappen Campeão Mundial 2022. Pintura Red Bull oficial. Escala 1/64.",
+      "price": 44.9,
+      "brand": "Hot Wheels",
+      "model": "Formula 1",
+      "scale": "1/64",
+      "stock": 6,
+      "img": "https://res.cloudinary.com/dukzggqkz/image/upload/v1775090373/camaro-preto_urdlg1.png",
+      "badge": "F1",
+      "stars": 4,
+      "createdAt": "2025-01-01T00:00:00.000Z",
+      "updatedAt": "2026-04-02T22:52:00.317Z"
+    },
+    {
+      "id": "5",
+      "name": "McLaren MCL36 #3 Ricciardo",
+      "description": "McLaren F1 Team 2022. Cor papaya icônica da McLaren com detalhes Gulf. Daniel Ricciardo nº3.",
+      "price": 42.9,
+      "brand": "Hot Wheels",
+      "model": "Formula 1",
+      "scale": "1/64",
+      "stock": 4,
+      "img": "https://res.cloudinary.com/dukzggqkz/image/upload/v1775090373/camaro-amarelo_brchse.png",
+      "badge": "F1",
+      "stars": 4,
+      "createdAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "6",
+      "name": "Lamborghini Huracán STO",
+      "description": "Série Car Culture Premium. Huracán STO em amarelo Giallo Belenus. Rodas premium reais e suspensão funcional.",
+      "price": 99.9,
+      "brand": "Hot Wheels Premium",
+      "model": "Exóticos",
+      "scale": "1/64",
+      "stock": 1,
+      "img": "https://res.cloudinary.com/dukzggqkz/image/upload/v1775090375/fastback-preto-f_x68xim.png",
+      "badge": "Premium",
+      "stars": 5,
+      "createdAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "7",
+      "name": "Dodge Challenger SRT Hellcat",
+      "description": "Matchbox edição especial Muscle Cars. Dodge Challenger em roxo plum crazy com faixas laterais. Clássico americano.",
+      "price": 28.9,
+      "brand": "Matchbox",
+      "model": "Raros",
+      "scale": "1/64",
+      "stock": 6,
+      "img": "https://res.cloudinary.com/dukzggqkz/image/upload/v1775090375/camaro-vermelho_pbrtfa.png",
+      "badge": "Novo",
+      "stars": 4,
+      "createdAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "8",
+      "name": "Bugatti Chiron Pur Sport",
+      "description": "MiniGT 1:64 Bugatti Chiron Pur Sport — edição azul French Racing. Acabamento bicolor e detalhes de carbono.",
+      "price": 149.9,
+      "brand": "MiniGT",
+      "model": "Exóticos",
+      "scale": "1/64",
+      "stock": 1,
+      "img": "https://res.cloudinary.com/dukzggqkz/image/upload/v1775090376/fast-cinza-f_aog5kw.png",
+      "badge": "Raros",
+      "stars": 5,
+      "createdAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "9",
+      "name": "VW Fusca Série Brasil",
+      "description": "Edição especial brasileira Fusca 1300 — verde menta com interior bege. Homenagem ao ícone nacional. Coleção Brasil.",
+      "price": 34.9,
+      "brand": "Matchbox",
+      "model": "Nacionais",
+      "scale": "1/64",
+      "stock": 8,
+      "img": "https://res.cloudinary.com/dukzggqkz/image/upload/v1775090375/corvete_csf9j6.png",
+      "badge": "Brasil",
+      "stars": 4,
+      "createdAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "10",
+      "name": "Toyota Supra A80 RZ",
+      "description": "Car Culture Premium — Toyota Supra MK4 A80 RZ em branco Suzuka. A lendária esportiva japonesa em escala.",
+      "price": 94.9,
+      "brand": "Hot Wheels Premium",
+      "model": "Raros",
+      "scale": "1/64",
+      "stock": 2,
+      "img": "https://res.cloudinary.com/dukzggqkz/image/upload/v1775090377/onix-branco_ncfmme.png",
+      "badge": "Raros",
+      "stars": 5,
+      "createdAt": "2025-01-01T00:00:00.000Z"
     }
   ],
   "settings": {
     "bannerUrl": "https://res.cloudinary.com/dukzggqkz/image/upload/v1775090371/fc73d3a4-459c-4917-9598-7caa0a4aaeb8_toajxs.png",
-    "logoUrl": "",
     "storeName": "Mini Garagem Colecionáveis",
-    "whatsappNumber": "5511999999999",
-    "updatedAt": "2024-01-01T00:00:00.000Z"
+    "whatsapp": "5561981074115",
+    "instagramUrl": "https://www.instagram.com/minigaragemcolecionaveis/"
   },
-  "users": [
-    {
-      "id": "1",
-      "username": "admin",
-      "passwordHash": "$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
-      "role": "admin",
-      "createdAt": "2024-01-01T00:00:00.000Z"
-    }
-  ]
+  "admin": {
+    "username": "admin",
+    "passwordHash": "$2a$10$c1YCHUGUBY5/U/8zor/qS.tafxRvZDomMr3OFRKl2z9Zet/GUerqO"
+  }
 }
