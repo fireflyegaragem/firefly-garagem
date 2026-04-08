@@ -1,0 +1,13 @@
+{
+  "products": [],
+  "settings": {
+    "bannerUrl": "",
+    "storeName": "Mini Garagem Colecionáveis",
+    "whatsapp": "",
+    "instagramUrl": ""
+  },
+  "admin": {
+    "username": "admin",
+    "passwordHash": "$2a$10$c1YCHUGUBY5/U/8zor/qS.tafxRvZDomMr3OFRKl2z9Zet/GUerqO"
+  }
+}
