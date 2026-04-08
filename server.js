@@ -162,6 +162,12 @@ app.get('/api/settings', (req, res) => {
   res.json(db.settings);
 });
 
+// GET /api/catalog
+app.get('/api/catalog', (req, res) => {
+  const db = readDB();
+  res.json(db.catalog || { brands: [], models: [], scales: [], badges: [] });
+});
+
 // ═══════════════════════════════════════════════════════════════
 // ADMIN API ROUTES (protected)
 // ═══════════════════════════════════════════════════════════════
@@ -266,6 +272,26 @@ app.put('/api/admin/settings', authRequired, upload.single('banner'), (req, res)
 
   writeDB(db);
   res.json(db.settings);
+});
+
+// GET /api/admin/catalog
+app.get('/api/admin/catalog', authRequired, (req, res) => {
+  const db = readDB();
+  res.json(db.catalog || { brands: [], models: [], scales: [], badges: [] });
+});
+
+// PUT /api/admin/catalog
+app.put('/api/admin/catalog', authRequired, (req, res) => {
+  const db = readDB();
+  const { brands, models, scales, badges } = req.body;
+  db.catalog = {
+    brands: brands || db.catalog?.brands || [],
+    models: models || db.catalog?.models || [],
+    scales: scales || db.catalog?.scales || [],
+    badges: badges || db.catalog?.badges || []
+  };
+  writeDB(db);
+  res.json(db.catalog);
 });
 
 // POST /api/admin/upload

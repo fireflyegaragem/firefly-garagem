@@ -857,6 +857,65 @@ tr:hover td { background: rgba(255,255,255,0.02); }
 }
 
 .overlay-mobile.show { display: block; }
+
+/* ── CATALOG PAGE ─────────────────────────────────────────── */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.catalog-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.catalog-card-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.catalog-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  min-height: 36px;
+  margin-bottom: 1rem;
+}
+.catalog-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+.catalog-tag button {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+}
+.catalog-tag button:hover { color: var(--red); }
+.catalog-add {
+  display: flex;
+  gap: 0.5rem;
+}
+.catalog-add .field-input { flex: 1; }
 </style>
 </head>
 <body>
@@ -908,6 +967,10 @@ tr:hover td { background: rgba(255,255,255,0.02); }
       </a>
       <a class="nav-item" data-page="products" onclick="showPage('products')">
         <i class="fa-solid fa-car"></i> Produtos
+      </a>
+
+      <a class="nav-item" data-page="catalog" onclick="showPage('catalog')">
+        <i class="fa-solid fa-tags"></i> Catálogo
       </a>
 
       <div class="nav-section-label">Configurações</div>
@@ -1075,6 +1138,50 @@ tr:hover td { background: rgba(255,255,255,0.02); }
       </div>
     </div>
 
+    <!-- CATALOG PAGE -->
+    <div class="page" id="page-catalog">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Catálogo</div>
+          <div class="page-subtitle">Gerencie marcas, modelos, escalas e tags disponíveis no formulário de produtos</div>
+        </div>
+      </div>
+      <div class="catalog-grid">
+        <div class="catalog-card">
+          <div class="catalog-card-title"><i class="fa-solid fa-industry"></i> Marcas</div>
+          <div class="catalog-tags" id="catalog-brands"></div>
+          <div class="catalog-add">
+            <input class="field-input" type="text" id="input-brands" placeholder="Nova marca..." onkeydown="if(event.key==='Enter')addCatalogItem('brands')">
+            <button class="btn btn-gold btn-sm" onclick="addCatalogItem('brands')"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+        <div class="catalog-card">
+          <div class="catalog-card-title"><i class="fa-solid fa-layer-group"></i> Modelos</div>
+          <div class="catalog-tags" id="catalog-models"></div>
+          <div class="catalog-add">
+            <input class="field-input" type="text" id="input-models" placeholder="Novo modelo..." onkeydown="if(event.key==='Enter')addCatalogItem('models')">
+            <button class="btn btn-gold btn-sm" onclick="addCatalogItem('models')"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+        <div class="catalog-card">
+          <div class="catalog-card-title"><i class="fa-solid fa-ruler"></i> Escalas</div>
+          <div class="catalog-tags" id="catalog-scales"></div>
+          <div class="catalog-add">
+            <input class="field-input" type="text" id="input-scales" placeholder="Nova escala..." onkeydown="if(event.key==='Enter')addCatalogItem('scales')">
+            <button class="btn btn-gold btn-sm" onclick="addCatalogItem('scales')"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+        <div class="catalog-card">
+          <div class="catalog-card-title"><i class="fa-solid fa-tag"></i> Tags</div>
+          <div class="catalog-tags" id="catalog-badges"></div>
+          <div class="catalog-add">
+            <input class="field-input" type="text" id="input-badges" placeholder="Nova tag..." onkeydown="if(event.key==='Enter')addCatalogItem('badges')">
+            <button class="btn btn-gold btn-sm" onclick="addCatalogItem('badges')"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- ACCOUNT PAGE -->
     <div class="page" id="page-account">
       <div class="settings-card" style="max-width:480px">
@@ -1118,75 +1225,24 @@ tr:hover td { background: rgba(255,255,255,0.02); }
           <label class="field-label">Marca *</label>
           <select class="field-select" id="fieldBrand">
             <option value="">Selecione...</option>
-            <option>Hot Wheels</option>
-            <option>Hot Wheels Premium</option>
-            <option>MiniGT</option>
-            <option>Matchbox</option>
-            <option>CKS</option>
-            <option>Maisto</option>
-            <option>Majorette</option>
-            <option>PopRace</option>
-            <option>JohnnyLighting</option>
-            <option>GreenLight</option>
-            <option>Inno64</option>
-            <option>KaidoHouse</option>
-            <option>M2Machine</option>
-            <option>AutoWorld</option>
-            <option>Tarmac</option>
-            <option>Burago</option>
-            <option>XCartoys</option>
-            <option>TrendsHobby</option>
-            <option>Spark</option>
-            <option>Solido</option>
-            <option>CM Model</option>
-            <option>IXO</option>
-            <option>CCA</option>
-            <option>Kyosho</option>
-            <option>Loose (Sem blister)</option>
           </select>
         </div>
         <div>
           <label class="field-label">Modelo / Categoria</label>
           <select class="field-select" id="fieldModel">
             <option value="">Selecione...</option>
-            <option>Nacionais</option>
-            <option>Raros</option>
-            <option>Exóticos</option>
-            <option>Fantasias</option>
-            <option>T-Hunt</option>
-            <option>Formula 1</option>
-            <option>Ferrari</option>
-            <option>Porsche</option>
-            <option>Velozes e Furiosos</option>
-            <option>Muscle Cars</option>
-            <option>JDM</option>
-            <option>Temáticos</option>
-            <option>Antiguidade</option>
-            <option>Dodge</option>
           </select>
         </div>
         <div>
           <label class="field-label">Escala</label>
           <select class="field-select" id="fieldScale">
             <option>1/64</option>
-            <option>1/43</option>
-            <option>1/32</option>
-            <option>1/24</option>
-            <option>1/18</option>
-            <option>1/12</option>
           </select>
         </div>
         <div>
           <label class="field-label">Tag / Badge</label>
           <select class="field-select" id="fieldBadge">
             <option>Novo</option>
-            <option>Destaque</option>
-            <option>Premium</option>
-            <option>F1</option>
-            <option>Brasil</option>
-            <option>Raros</option>
-            <option>RLC</option>
-            <option>ELITE 64</option>
           </select>
         </div>
         <div>
@@ -1320,6 +1376,7 @@ function initApp() {
   loadDashboard();
   loadProducts();
   loadSettings();
+  loadCatalog();
 }
 
 // ─── NAVIGATION ───────────────────────────────────────────────────
@@ -1331,6 +1388,7 @@ function showPage(page) {
   document.getElementById('topbarTitle').textContent = {
     dashboard: 'Dashboard',
     products: 'Produtos',
+    catalog: 'Catálogo',
     settings: 'Loja & Banner',
     account: 'Minha Conta'
   }[page];
@@ -1451,6 +1509,7 @@ function openProductModal(id) {
   selectedProductFile = null;
   document.getElementById('modalTitle').textContent = 'Novo Produto';
   document.getElementById('editProductId').value = '';
+  populateProductSelects();
   clearFormFields();
   document.getElementById('productModal').classList.add('open');
 }
@@ -1461,6 +1520,7 @@ async function editProduct(id) {
   editingId = id;
   selectedProductFile = null;
 
+  populateProductSelects(product);
   document.getElementById('modalTitle').textContent = 'Editar Produto';
   document.getElementById('editProductId').value = id;
   document.getElementById('fieldName').value = product.name || '';
@@ -1584,6 +1644,73 @@ async function saveProduct() {
     btn.disabled = false;
     btn.innerHTML = '<i class="fa-solid fa-floppy-disk"></i> Salvar produto';
   }
+}
+
+// ─── CATALOG ──────────────────────────────────────────────────────
+let catalogData = { brands: [], models: [], scales: [], badges: [] };
+
+async function loadCatalog() {
+  try {
+    const res = await apiFetch('/admin/catalog');
+    catalogData = await res.json();
+  } catch(e) {}
+  renderAllCatalogSections();
+  populateProductSelects();
+}
+
+function renderAllCatalogSections() {
+  ['brands','models','scales','badges'].forEach(renderCatalogTags);
+}
+
+function renderCatalogTags(type) {
+  const container = document.getElementById(`catalog-${type}`);
+  if (!container) return;
+  container.innerHTML = catalogData[type].map((item, i) =>
+    `<span class="catalog-tag">${item}<button onclick="removeCatalogItem('${type}',${i})" title="Remover"><i class="fa-solid fa-xmark"></i></button></span>`
+  ).join('');
+}
+
+async function addCatalogItem(type) {
+  const input = document.getElementById(`input-${type}`);
+  const val = input.value.trim();
+  if (!val) return;
+  if (catalogData[type].includes(val)) { showToast('Item já existe', 'error'); return; }
+  catalogData[type].push(val);
+  input.value = '';
+  renderCatalogTags(type);
+  populateProductSelects();
+  await saveCatalog();
+  showToast('Adicionado!', 'success');
+}
+
+async function removeCatalogItem(type, index) {
+  catalogData[type].splice(index, 1);
+  renderCatalogTags(type);
+  populateProductSelects();
+  await saveCatalog();
+  showToast('Removido!', 'success');
+}
+
+async function saveCatalog() {
+  await apiFetch('/admin/catalog', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(catalogData)
+  });
+}
+
+function populateProductSelects(product) {
+  fillSelect('fieldBrand', catalogData.brands, product?.brand || '');
+  fillSelect('fieldModel', catalogData.models, product?.model || '');
+  fillSelect('fieldScale', catalogData.scales, product?.scale || '1/64');
+  fillSelect('fieldBadge', catalogData.badges, product?.badge || 'Novo');
+}
+
+function fillSelect(id, items, selected) {
+  const sel = document.getElementById(id);
+  if (!sel) return;
+  sel.innerHTML = `<option value="">Selecione...</option>` +
+    items.map(i => `<option${i === selected ? ' selected' : ''}>${i}</option>`).join('');
 }
 
 // ─── DELETE ───────────────────────────────────────────────────────
